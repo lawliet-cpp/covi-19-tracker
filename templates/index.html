@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body{
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+
+        
+    }
+    div{
+        margin: 40px;
+    }
+    nav{
+
+      padding:20px  10px;
+      margin: 0px   0px;
+
+    }
+    button{
+        border-radius: none;
+        background-color: grey;
+        size: 50px
+    }
+    h3{
+        font-size: 40px;
+        color: black;
+    }
+    #contry{
+        color: orange;   
+        font-size:100px;
+    }
+
+
+
+</style>
+<head>
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 TRACKER</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+</head>
+<body style="background-color: #15202b"">
+    <div class="text-center">
+        <h3 style="color: white;" class="p-3 bg-primary">   COVID-19 TRACKER <span style="color: red;" >Live</span> </h3>
+         <form method="post">
+        {% csrf_token %}
+        {{ form.name }}
+        
+    </form>
+    </div>
+    <div class="container">
+        <h2 id="contry">
+            Country:
+            {{country}}
+        </h2>
+        
+
+        <section id="counter" class="section-padding">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                  <div class="mt-4 text-center row">
+                    <!-- Start counter -->
+                    <div class="bg-danger mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
+                      <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-o"><i class="lni-users"></i></div>
+                        <div class="fact-count">
+                          <h2><span class="counter"> <b>{{ all }}</b> </span></h2>
+                          <h3>TOTLAL CASES</h3>
+                          <h3> NEW CASES</h3>
+                          <b style="font-size: 40px">{{new}}</b>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End counter -->
+                    <!-- Start counter -->
+                    <div class="bg-success mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
+                        <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
+                          <div class="icon-o"><i class="lni-users"></i></div>
+                          <div class="fact-count">
+                            <h2><span class="counter"> <b>{{ recovered }}</b> </span></h2>
+                            <h3>RECOVERD</h3>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- End counter -->
+                    <!-- Start counter -->
+                    <div class="bg-secondary mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
+                        <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
+                          <div class="icon-o"><i class="lni-users"></i></div>
+                          <div class="fact-count">
+                            <h2><span class="counter"> <b>{{ deaths }}</b> </span></h2>
+                            <h3>DEATHS</h3>
+                            <h2><span class="counter"> <b>{{ deaths_new }}</b> </span></h2>
+                            <h3> NEW DEATHS</h3> <b></b>
+                          </div>
+                        </div>
+                      </div>
+
+                  <div class="bg-warning mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
+                    <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
+                      <div class="icon-o"><i class="lni-users"></i></div>
+                      <div class="fact-count">
+                        <h2><span class="counter"> <b>{{serious}}</b> </span></h2>
+                        <h3>CRITICAL CASES</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-info mb-3 m-2 rounded-lg p-3 col-lg-3 col-md-6 col-xs-12">
+                    <div class="counter-box wow fadeInUp" data-wow-delay="0.2s">
+                      <div class="icon-o"><i class="lni-users"></i></div>
+                      <div class="fact-count">
+                        <h2><span class="counter"> <b>{{ active }}</b> </span></h2>
+                        <h3>active cases</h3>
+                      </div>
+                    </div>
+                  </div>
+                <!-- End counter -->
+              </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Counter Section End -->
+
+    </div>
+    <footer>
+        <div class="text-center">
+            <p>Devlopped by AHC</p>
+        </div>
+
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+<footer>
+     <a href='https://www.symptoma.fr/fr/info/covid-19#info'>Symptômes du coronavirus</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=98a1fe4d1438a8cd0a2c7cef40b0f871d2908d97'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/693751/t/10"></script>
+</footer>
+</html> 
